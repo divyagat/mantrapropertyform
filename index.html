@@ -1,0 +1,2487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Own your dream home in Pune with Mantra Properties. Premium 2, 3 & 4 BHK homes in Pune's fastest-growing locations." />
+  <title>Mantra Properties | Luxury Homes in Pune</title>
+  <link rel="icon" href="https://thumbs.dreamstime.com/b/house-real-estate-logo-icon-vector-image-90586864.jpg" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #0a0f25;
+      --primary-dark: #060a1a;
+      --primary-light: #121a3a;
+      --accent-gold: #d4af37;
+      --accent-gold-light: #e6c06b;
+      --accent-gold-dark: #b89522;
+      --accent-orange: #e67e22;
+      --accent-orange-light: #f39c12;
+      --secondary: #2c3e50;
+      --text: #0f172a;
+      --text-light: #64748b;
+      --text-muted: #94a3b8;
+      --border: #e2e8f0;
+      --border-light: #f1f5f9;
+      --success: #10b981;
+      --error: #ef4444;
+      --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 20px 50px -15px rgba(0, 0, 0, 0.25);
+      --shadow-xl: 0 30px 60px -20px rgba(0, 0, 0, 0.35);
+      --shadow-glow: 0 0 25px rgba(212, 175, 55, 0.35);
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-xl: 32px;
+      --radius-full: 9999px;
+      --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      --transition-fast: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    /* Base styles */
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #f8fafc;
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 25%),
+        radial-gradient(circle at 90% 80%, rgba(230, 126, 34, 0.07) 0%, transparent 30%),
+        radial-gradient(circle at 50% 50%, rgba(44, 62, 80, 0.8) 0%, transparent 70%);
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(circle at 20% 35%, rgba(212, 175, 55, 0.12) 0%, transparent 20%),
+        radial-gradient(circle at 80% 65%, rgba(230, 126, 34, 0.1) 0%, transparent 25%);
+      z-index: -1;
+      opacity: 0.7;
+      animation: float 15s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0); }
+      25% { transform: translate(2%, -1%); }
+      50% { transform: translate(-1%, 2%); }
+      75% { transform: translate(-2%, 1%); }
+    }
+
+    /* Header styles */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 16px 24px;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      background: rgba(10, 15, 37, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .header.scrolled {
+      padding: 10px 24px;
+      background: rgba(6, 10, 26, 0.95);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      letter-spacing: -0.5px;
+      position: relative;
+    }
+
+    .brand::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+      border-radius: 2px;
+      opacity: 0;
+      transform: scaleX(0.8);
+      transform-origin: center;
+      transition: var(--transition);
+    }
+
+    .header:hover .brand::after {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+
+    .brand-icon {
+      font-size: 2.1rem;
+      background: linear-gradient(135deg, var(--accent-gold), var(--accent-orange));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      position: relative;
+    }
+
+    .brand-icon::before {
+      content: "";
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      width: calc(100% + 8px);
+      height: calc(100% + 8px);
+      background: linear-gradient(45deg, var(--accent-gold), var(--accent-orange));
+      border-radius: 8px;
+      z-index: -1;
+      opacity: 0.25;
+      animation: pulse-icon 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse-icon {
+      0%, 100% { transform: scale(1); opacity: 0.25; }
+      50% { transform: scale(1.1); opacity: 0.35; }
+    }
+
+    .brand span {
+      background: linear-gradient(135deg, var(--accent-gold-light), var(--accent-gold));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      position: relative;
+      font-weight: 900;
+    }
+
+    .brand span::after {
+      content: "";
+      position: absolute;
+      bottom: 4px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+      border-radius: 3px;
+      opacity: 0.8;
+    }
+
+    /* Hero section */
+    .hero {
+      min-height: 100vh;
+      width: 100%;
+      background: 
+        linear-gradient(rgba(10, 15, 37, 0.88), rgba(6, 10, 26, 0.95)),
+        url("https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      padding-top: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 15% 25%, rgba(212, 175, 55, 0.15) 0%, transparent 35%),
+        radial-gradient(circle at 85% 75%, rgba(230, 126, 34, 0.12) 0%, transparent 40%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      max-width: 1320px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-text {
+      max-width: 680px;
+      animation: fadeInUp 0.9s ease-out;
+    }
+
+    .hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.2rem;
+      line-height: 1.15;
+      font-weight: 800;
+      margin-bottom: 28px;
+      letter-spacing: -1.5px;
+      background: linear-gradient(135deg, #fff 0%, #f1f5f9 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      position: relative;
+      text-shadow: 0 5px 25px rgba(0, 0, 0, 0.35);
+    }
+
+    .hero-text h1::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, var(--accent-gold), var(--accent-orange), transparent);
+      border-radius: 2px;
+      opacity: 0.9;
+    }
+
+    .divider {
+      width: 80px;
+      height: 5px;
+      background: linear-gradient(90deg, var(--accent-gold), var(--accent-orange));
+      margin: 24px 0 32px;
+      border-radius: 3px;
+      position: relative;
+      box-shadow: var(--shadow-glow);
+      animation: pulse-divider 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-divider {
+      0%, 100% { opacity: 0.9; transform: scaleX(1); }
+      50% { opacity: 1; transform: scaleX(1.05); }
+    }
+
+    .hero-text p {
+      font-size: 1.4rem;
+      color: #e2e8f0;
+      margin-bottom: 32px;
+      line-height: 1.65;
+      font-weight: 300;
+      letter-spacing: -0.3px;
+    }
+
+    .hero-text p strong {
+      color: var(--accent-gold-light);
+      font-weight: 600;
+      position: relative;
+    }
+
+    .hero-text p strong::after {
+      content: "";
+      position: absolute;
+      bottom: 4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: rgba(212, 175, 55, 0.4);
+      border-radius: 2px;
+      z-index: -1;
+    }
+
+    .benefits {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-top: 12px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .benefits::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      bottom: 8px;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--accent-gold), var(--accent-orange));
+      border-radius: 3px;
+    }
+
+    .benefits li {
+      font-size: 1.2rem;
+      color: #f1f5f9;
+      padding-left: 28px;
+      position: relative;
+      line-height: 1.6;
+      font-weight: 300;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      transition: var(--transition-fast);
+    }
+
+    .benefits li:hover {
+      transform: translateX(4px);
+      color: var(--accent-gold-light);
+    }
+
+    .benefits li::before {
+      content: "";
+      position: absolute;
+      left: -22px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 14px;
+      background: linear-gradient(135deg, var(--accent-gold), var(--accent-orange));
+      border-radius: 50%;
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.5);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .cta-container {
+      display: flex;
+      gap: 16px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .cta-primary {
+      background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 1.2rem;
+      padding: 16px 36px;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition);
+      box-shadow: var(--shadow-glow), var(--shadow-md);
+      border: 2px solid var(--accent-gold);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .cta-primary::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-gold-dark), var(--accent-gold));
+      z-index: -1;
+      transition: var(--transition);
+    }
+
+    .cta-primary:hover::before {
+      transform: scaleX(1.05) scaleY(1.1);
+    }
+
+    .cta-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.45);
+      color: var(--primary-dark);
+    }
+
+    .cta-secondary {
+      background: rgba(255, 255, 255, 0.12);
+      color: white;
+      font-weight: 600;
+      font-size: 1.15rem;
+      padding: 15px 32px;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(4px);
+    }
+
+    .cta-secondary:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .trust-badges {
+      display: flex;
+      gap: 24px;
+      margin-top: 36px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .badge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .badge-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: var(--accent-gold);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .badge-text {
+      font-size: 0.95rem;
+      text-align: center;
+      font-weight: 500;
+      max-width: 120px;
+      line-height: 1.4;
+    }
+
+    /* Form card */
+    .form-card-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .form-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: var(--radius-xl);
+      padding: 42px 36px;
+      box-shadow: var(--shadow-xl), var(--shadow-glow);
+      max-width: 520px;
+      width: 100%;
+      margin: 0 auto;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 0.9s ease-out 0.2s both;
+      z-index: 10;
+    }
+
+    .form-card::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: 
+        radial-gradient(circle at 25% 30%, rgba(212, 175, 55, 0.12) 0%, transparent 25%),
+        radial-gradient(circle at 75% 70%, rgba(230, 126, 34, 0.08) 0%, transparent 30%);
+      z-index: -1;
+      animation: rotate-bg 25s linear infinite;
+    }
+
+    @keyframes rotate-bg {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .form-card::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(10, 15, 37, 0.7) 0%, rgba(6, 10, 26, 0.9) 100%);
+      z-index: -1;
+    }
+
+    .form-header {
+      text-align: center;
+      margin-bottom: 32px;
+      position: relative;
+      padding-bottom: 20px;
+    }
+
+    .form-header::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-gold), var(--accent-orange));
+      border-radius: 2px;
+      box-shadow: var(--shadow-glow);
+    }
+
+    .form-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      text-align: center;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, var(--accent-gold-light), var(--accent-orange-light));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .subtitle {
+      font-size: 1.25rem;
+      color: var(--accent-gold-light);
+      text-align: center;
+      margin: 8px 0 0;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+
+    .input-group {
+      margin-bottom: 22px;
+      position: relative;
+    }
+
+    .input-group label {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 10px;
+      display: block;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      letter-spacing: 0.3px;
+    }
+
+    .input-group label::after {
+      content: "*";
+      color: var(--accent-orange);
+      font-size: 1.2rem;
+      line-height: 1;
+      margin-left: 2px;
+    }
+
+    .input-group input,
+    .input-group select {
+      width: 100%;
+      padding: 18px 22px;
+      font-size: 1.15rem;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      outline: none;
+      background: rgba(255, 255, 255, 0.08);
+      transition: var(--transition);
+      font-family: 'Inter', sans-serif;
+      color: rgb(107, 105, 105);
+      letter-spacing: 0.5px;
+    }
+
+    .input-group input::placeholder,
+    .input-group select::placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .input-group input:focus,
+    .input-group select:focus {
+      border-color: var(--accent-gold);
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .input-group input.error,
+    .input-group select.error {
+      border-color: var(--error);
+    }
+
+    .phone-group {
+      display: flex;
+      gap: 14px;
+    }
+
+    .country-code {
+      width: 32%;
+      min-width: 95px;
+    }
+
+    .country-code input {
+      background: rgba(212, 175, 55, 0.15);
+      text-align: center;
+      font-weight: 700;
+      border-radius: var(--radius-md);
+      color: var(--accent-gold-light);
+      border-color: rgba(212, 175, 55, 0.4);
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 18px 24px;
+      margin-top: 10px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      border: none;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      color: var(--primary-dark);
+      letter-spacing: 1px;
+      background: linear-gradient(135deg, var(--accent-gold-light), var(--accent-gold));
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg), var(--shadow-glow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      font-family: 'Playfair Display', serif;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      z-index: 1;
+    }
+
+    .submit-btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.8s;
+      z-index: -1;
+    }
+
+    .submit-btn:hover::before {
+      left: 100%;
+    }
+
+    .submit-btn::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
+      z-index: -1;
+      transition: var(--transition);
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 15px 40px rgba(212, 175, 55, 0.55);
+    }
+
+    .submit-btn:hover::after {
+      transform: scaleX(1.05) scaleY(1.1);
+    }
+
+    .submit-btn:active {
+      transform: translateY(1px) scale(0.99);
+    }
+
+    .submit-btn.loading {
+      background: #94a3b8;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: var(--shadow-md);
+    }
+
+    .submit-btn.loading::before,
+    .submit-btn.loading::after {
+      display: none;
+    }
+
+    .submit-btn.loading::after {
+      content: "";
+      position: absolute;
+      width: 26px;
+      height: 26px;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-top-color: var(--primary-dark);
+      border-radius: 50%;
+      animation: spinner 0.8s linear infinite;
+      z-index: 2;
+    }
+
+    @keyframes spinner {
+      to { transform: rotate(360deg); }
+    }
+
+    .trust {
+      margin-top: 28px;
+      font-size: 0.95rem;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.6;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-weight: 300;
+      letter-spacing: 0.3px;
+    }
+
+    .trust strong {
+      color: var(--accent-gold-light);
+      font-weight: 600;
+      display: block;
+      margin-top: 4px;
+      font-size: 1.05rem;
+    }
+
+    .whatsapp-container {
+      margin-top: 30px;
+      text-align: center;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #25D366;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.25rem;
+      padding: 14px 32px;
+      border-radius: var(--radius-full);
+      background: rgba(37, 211, 102, 0.15);
+      transition: var(--transition);
+      border: 1px solid rgba(37, 211, 102, 0.3);
+      backdrop-filter: blur(4px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .whatsapp-btn:hover {
+      background: rgba(37, 211, 102, 0.25);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+    }
+
+    .whatsapp-btn i {
+      font-size: 1.8rem;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    #formMessage {
+      min-height: 30px;
+      font-weight: 600;
+      text-align: center;
+      margin-top: 20px;
+      padding: 12px 20px;
+      border-radius: var(--radius-md);
+      font-size: 1.15rem;
+      display: none;
+      backdrop-filter: blur(8px);
+      border: 1px solid;
+    }
+
+    #formMessage.success {
+      display: block;
+      color: var(--success);
+      background: rgba(16, 185, 129, 0.15);
+      border-color: rgba(16, 185, 129, 0.3);
+    }
+
+    #formMessage.error {
+      display: block;
+      color: var(--error);
+      background: rgba(239, 68, 68, 0.15);
+      border-color: rgba(239, 68, 68, 0.3);
+    }
+
+    /* Chatbot styles */
+
+
+
+
+
+
+    
+    #chatbot-toggle {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      z-index: 10000;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: white;
+      border: none;
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.55);
+      cursor: pointer;
+      font-size: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: pulse-chat 2.5s ease-in-out infinite;
+      transition: var(--transition);
+      z-index: 9999;
+      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5), 0 0 0 4px rgba(255, 255, 255, 0.2);
+    }
+
+    #chatbot-toggle:hover {
+      transform: scale(1.1) rotate(12deg);
+      box-shadow: 0 10px 35px rgba(37, 211, 102, 0.7), 0 0 0 4px rgba(255, 255, 255, 0.3);
+    }
+
+    #chatbot-toggle::before {
+      content: "";
+      position: absolute;
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #128C7E, #075E54);
+      animation: rotate 3s linear infinite;
+      z-index: -1;
+      opacity: 0.9;
+    }
+
+    #chatbot-toggle::after {
+      content: "";
+      position: absolute;
+      width: 85px;
+      height: 85px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      z-index: -2;
+      animation: pulse-ring 2s ease-out infinite;
+    }
+
+    @keyframes pulse-chat {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7), 0 0 0 4px rgba(255, 255, 255, 0.2); }
+      70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0), 0 0 0 4px rgba(255, 255, 255, 0.3); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 0 0 4px rgba(255, 255, 255, 0.2); }
+    }
+
+    @keyframes pulse-ring {
+      0% { transform: scale(0.8); opacity: 0.7; }
+      100% { transform: scale(2.2); opacity: 0; }
+    }
+
+    #chatbot-container {
+      position: fixed;
+      bottom: 35px;
+      right: 32px;
+      z-index: 9998;
+      width: 420px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-xl), 0 0 30px rgba(37, 211, 102, 0.25);
+      font-family: 'Inter', Arial, sans-serif;
+      display: none;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      display: flex;
+      flex-direction: column;
+      max-height: 92vh;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      transform-origin: bottom right;
+    }
+
+    @keyframes slideUp {
+      from { 
+        opacity: 0; 
+        transform: translateY(30px) scale(0.96);
+      }
+      to { 
+        opacity: 1; 
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    #chatbot-header {
+      background: linear-gradient(120deg, var(--primary-light), var(--secondary));
+      color: white;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      position: relative;
+      z-index: 10;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    #chatbot-header::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-gold), var(--accent-orange), var(--accent-gold));
+    }
+
+    #chatbot-header .avatar {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    #chatbot-header .avatar-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--accent-gold), var(--accent-orange));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.8rem;
+      color: var(--primary);
+      flex-shrink: 0;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3), var(--shadow-glow);
+      position: relative;
+      border: 3px solid rgba(255, 255, 255, 0.2);
+    }
+
+    #chatbot-header .avatar-icon::before {
+      content: "";
+      position: absolute;
+      width: 66px;
+      height: 66px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, var(--accent-gold), var(--accent-orange), var(--accent-gold-light));
+      z-index: -1;
+      animation: rotate 4s linear infinite;
+      opacity: 0.3;
+    }
+
+    #chatbot-header .avatar-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #chatbot-header .avatar-name {
+      font-family: 'Playfair Display', serif;
+      font-weight: 800;
+      font-size: 1.55rem;
+      margin-bottom: 2px;
+      background: linear-gradient(135deg, var(--accent-gold-light), var(--accent-orange-light));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    #chatbot-header .avatar-status {
+      font-size: 0.95rem;
+      color: var(--accent-gold-light);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 500;
+    }
+
+    #chatbot-header .avatar-status::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      background: var(--success);
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 0 8px var(--success);
+    }
+
+    #chatbot-close {
+      background: rgba(255, 255, 255, 0.15);
+      border: none;
+      color: white;
+      font-size: 1.9rem;
+      cursor: pointer;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      position: relative;
+      z-index: 20;
+    }
+
+    #chatbot-close:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: rotate(90deg) scale(1.1);
+    }
+
+    #chatbot-messages {
+      padding: 24px;
+      max-height: 360px;
+      overflow-y: auto;
+      background: rgba(15, 23, 42, 0.7);
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      scroll-behavior: smooth;
+      backdrop-filter: blur(10px);
+    }
+
+    .message {
+      max-width: 90%;
+      padding: 18px 22px;
+      border-radius: 24px;
+      font-size: 1.1rem;
+      line-height: 1.55;
+      position: relative;
+      animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: var(--shadow-md);
+      font-weight: 300;
+      letter-spacing: 0.3px;
+    }
+
+    @keyframes fadeIn {
+      from { 
+        opacity: 0; 
+        transform: translateY(15px);
+      }
+      to { 
+        opacity: 1; 
+        transform: translateY(0);
+      }
+    }
+
+    .bot-message {
+      background: rgba(30, 41, 59, 0.85);
+      color: #f8fafc;
+      align-self: flex-start;
+      border-bottom-left-radius: 10px;
+      border-top-left-radius: 24px;
+      border-left: 3px solid var(--accent-gold);
+      position: relative;
+      backdrop-filter: blur(8px);
+    }
+
+    .bot-message::before {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 20px;
+      width: 16px;
+      height: 16px;
+      background: rgba(30, 41, 59, 0.85);
+      border-left: 3px solid var(--accent-gold);
+      border-bottom: 3px solid var(--accent-gold);
+      transform: rotate(45deg);
+      z-index: -1;
+      border-bottom-left-radius: 2px;
+    }
+
+    .user-message {
+      background: linear-gradient(135deg, var(--accent-gold), var(--accent-orange));
+      color: var(--primary-dark);
+      align-self: flex-end;
+      border-bottom-right-radius: 10px;
+      border-top-right-radius: 24px;
+      box-shadow: 0 5px 20px rgba(212, 175, 55, 0.35);
+      font-weight: 500;
+      position: relative;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .user-message::before {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      right: 20px;
+      width: 16px;
+      height: 16px;
+      background: linear-gradient(135deg, var(--accent-gold), var(--accent-orange));
+      transform: rotate(45deg);
+      z-index: -1;
+      border-top-right-radius: 2px;
+    }
+
+    .typing-indicator {
+      display: flex;
+      padding: 16px 20px;
+      background: rgba(30, 41, 59, 0.85);
+      border-radius: 24px;
+      align-self: flex-start;
+      border-bottom-left-radius: 10px;
+      margin-bottom: 8px;
+      border-left: 3px solid var(--accent-gold);
+      box-shadow: var(--shadow-md);
+      backdrop-filter: blur(8px);
+    }
+
+    .typing-dots {
+      display: flex;
+      gap: 5px;
+    }
+
+    .typing-dots span {
+      width: 10px;
+      height: 10px;
+      background: var(--accent-gold-light);
+      border-radius: 50%;
+      display: inline-block;
+      animation: bounce 1.5s infinite ease-in-out both;
+    }
+
+    .typing-dots span:nth-child(1) { animation-delay: -0.32s; }
+    .typing-dots span:nth-child(2) { animation-delay: -0.16s; }
+    .typing-dots span:nth-child(3) { animation-delay: 0s; }
+
+    @keyframes bounce {
+      0%, 80%, 100% { transform: scale(0.6); opacity: 0.5; }
+      40% { transform: scale(1); opacity: 1; }
+    }
+
+    #chatbot-buttons {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      gap: 14px;
+      background: rgba(20, 30, 50, 0.9);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .quick-btn {
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: var(--accent-gold-light);
+      padding: 14px 16px;
+      border-radius: var(--radius-full);
+      font-size: 1.05rem;
+      cursor: pointer;
+      transition: var(--transition);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 8px;
+      box-shadow: var(--shadow-sm);
+      backdrop-filter: blur(4px);
+      letter-spacing: 0.5px;
+    }
+
+    .quick-btn i {
+      font-size: 1.3rem;
+      min-width: 20px;
+    }
+
+    .quick-btn:hover {
+      background: rgba(212, 175, 55, 0.15);
+      border-color: var(--accent-gold);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .quick-btn:active {
+      transform: translateY(0);
+    }
+
+    .quick-btn.whatsapp-btn {
+      background: linear-gradient(135deg, rgba(37, 211, 102, 0.9), rgba(18, 140, 126, 0.95));
+      color: white;
+      border: none;
+      grid-column: span 2;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quick-btn.whatsapp-btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.7s;
+      z-index: -1;
+    }
+
+    .quick-btn.whatsapp-btn:hover::before {
+      left: 100%;
+    }
+
+    .quick-btn.whatsapp-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+    }
+
+    #chatbot-input-container {
+      padding: 20px;
+      background: rgba(20, 30, 50, 0.95);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      backdrop-filter: blur(10px);
+    }
+
+    #user-message {
+      flex: 1;
+      padding: 16px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-full);
+      font-size: 1.1rem;
+      outline: none;
+      transition: var(--transition);
+      background: rgba(30, 41, 59, 0.7);
+      color: white;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.5px;
+    }
+
+    #user-message:focus {
+      border-color: var(--accent-gold);
+      background: rgba(40, 50, 70, 0.9);
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+    }
+
+    #user-message::placeholder {
+      color: var(--text-muted);
+      opacity: 1;
+      font-weight: 300;
+    }
+
+    #send-btn {
+      background: linear-gradient(135deg, var(--accent-gold), var(--accent-orange));
+      color: var(--primary-dark);
+      border: none;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      flex-shrink: 0;
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+      font-size: 1.6rem;
+      position: relative;
+      z-index: 5;
+    }
+
+    #send-btn::before {
+      content: "";
+      position: absolute;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, var(--accent-gold), var(--accent-orange), var(--accent-gold-light));
+      z-index: -1;
+      animation: rotate 3s linear infinite;
+      opacity: 0.3;
+    }
+
+    #send-btn:hover {
+      transform: scale(1.12) rotate(5deg);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+    }
+
+    #send-btn:active {
+      transform: scale(0.95) rotate(0);
+    }
+
+    #send-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    #chatbot-status {
+      padding: 12px 20px;
+      text-align: center;
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      background: rgba(20, 30, 50, 0.9);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      min-height: 32px;
+      font-weight: 500;
+      backdrop-filter: blur(10px);
+    }
+
+    .status-success {
+      color: var(--success);
+    }
+
+    .status-error {
+      color: var(--error);
+    }
+
+    /* Animations */
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+        transform: scale(1);
+      }
+      70% {
+        box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);
+        transform: scale(1.05);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Floating elements animation */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    .floating {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    /* Decorative elements */
+    .decoration {
+      position: absolute;
+      z-index: 0;
+      opacity: 0.15;
+    }
+
+    .decoration-1 {
+      top: 15%;
+      left: 5%;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: var(--accent-gold);
+      filter: blur(40px);
+      animation: pulse 4s ease-in-out infinite;
+    }
+
+    .decoration-2 {
+      bottom: 10%;
+      right: 8%;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: var(--accent-orange);
+      filter: blur(50px);
+      animation: pulse 5s ease-in-out infinite reverse;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .hero-text h1 {
+        font-size: 3.6rem;
+      }
+      
+      .hero-text p {
+        font-size: 1.3rem;
+      }
+      
+      .form-card {
+        max-width: 480px;
+        padding: 36px 30px;
+      }
+      
+      .form-card h2 {
+        font-size: 2.2rem;
+      }
+      
+      .benefits li {
+        font-size: 1.15rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        padding: 12px 20px;
+      }
+      
+      .header.scrolled {
+        padding: 8px 20px;
+      }
+      
+      .brand {
+        font-size: 1.65rem;
+      }
+      
+      .brand-icon {
+        font-size: 1.9rem;
+      }
+      
+      .hero {
+        min-height: auto;
+        padding-top: 80px;
+        padding-bottom: 50px;
+      }
+      
+      .hero-content {
+        flex-direction: column;
+        padding: 0 20px;
+        gap: 40px;
+      }
+      
+      .hero-text {
+        max-width: 100%;
+        text-align: center;
+        animation: none;
+      }
+      
+      .hero-text h1 {
+        font-size: 3.1rem;
+        margin-bottom: 24px;
+      }
+      
+      .divider {
+        margin: 22px auto 28px;
+      }
+      
+      .hero-text p {
+        font-size: 1.2rem;
+        margin-bottom: 28px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .benefits {
+        max-width: 550px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .benefits::before {
+        left: 16px;
+      }
+      
+      .benefits li {
+        font-size: 1.1rem;
+        padding-left: 32px;
+      }
+      
+      .benefits li::before {
+        left: -26px;
+      }
+      
+      .cta-container {
+        justify-content: center;
+      }
+      
+      .trust-badges {
+        justify-content: center;
+      }
+      
+      .form-card-container {
+        width: 100%;
+      }
+      
+      .form-card {
+        max-width: 100%;
+        padding: 32px 26px;
+        border-radius: 32px 32px 0 0;
+        margin: 0;
+        animation: none;
+      }
+      
+      .form-card h2 {
+        font-size: 2.0rem;
+      }
+      
+      .subtitle {
+        font-size: 1.15rem;
+      }
+      
+      .input-group input,
+      .input-group select {
+        padding: 16px 20px;
+        font-size: 1.1rem;
+      }
+      
+      .phone-group {
+        flex-direction: column;
+        gap: 14px;
+      }
+      
+      .country-code {
+        width: 100%;
+        min-width: auto;
+      }
+      
+      .submit-btn {
+        padding: 16px 20px;
+        font-size: 1.25rem;
+      }
+      
+      .trust {
+        font-size: 0.9rem;
+        margin-top: 24px;
+      }
+      
+      .whatsapp-container {
+        margin-top: 26px;
+      }
+      
+      .whatsapp-btn {
+        font-size: 1.15rem;
+        padding: 12px 26px;
+      }
+      
+      .whatsapp-btn i {
+        font-size: 1.6rem;
+      }
+      
+      /* Chatbot adjustments */
+      #chatbot-container {
+        width: calc(100% - 40px);
+        max-width: 460px;
+        bottom: 100px;
+        right: 20px;
+        max-height: 80vh;
+      }
+      
+      #chatbot-messages {
+        max-height: 320px;
+        padding: 20px;
+      }
+      
+      .message {
+        max-width: 94%;
+        padding: 16px 20px;
+        font-size: 1.05rem;
+      }
+      
+      #chatbot-buttons {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        padding: 18px;
+        gap: 12px;
+      }
+      
+      .quick-btn {
+        padding: 12px 14px;
+        font-size: 1rem;
+      }
+      
+      .quick-btn.whatsapp-btn {
+        grid-column: span 2;
+      }
+      
+      #chatbot-input-container {
+        padding: 18px;
+      }
+      
+      #user-message {
+        padding: 14px 18px;
+        font-size: 1.05rem;
+      }
+      
+      #send-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.4rem;
+      }
+      
+      #chatbot-toggle {
+        width: 68px;
+        height: 68px;
+        bottom: 26px;
+        right: 26px;
+        font-size: 28px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header {
+        padding: 10px 16px;
+      }
+      
+      .brand {
+        font-size: 1.55rem;
+      }
+      
+      .brand-icon {
+        font-size: 1.8rem;
+      }
+      
+      .hero-content {
+        padding: 0 16px;
+        gap: 36px;
+      }
+      
+      .hero-text h1 {
+        font-size: 2.7rem;
+        line-height: 1.2;
+        letter-spacing: -1px;
+      }
+      
+      .hero-text p {
+        font-size: 1.1rem;
+        margin-bottom: 26px;
+      }
+      
+      .divider {
+        width: 70px;
+        margin: 20px auto 26px;
+      }
+      
+      .benefits li {
+        font-size: 1.05rem;
+        padding-left: 30px;
+      }
+      
+      .benefits li::before {
+        width: 12px;
+        height: 12px;
+        left: -24px;
+      }
+      
+      .cta-primary {
+        width: 100%;
+        justify-content: center;
+        padding: 15px;
+        font-size: 1.15rem;
+      }
+      
+      .cta-secondary {
+        width: 100%;
+        justify-content: center;
+        padding: 14px;
+        font-size: 1.1rem;
+      }
+      
+      .trust-badges {
+        gap: 16px;
+      }
+      
+      .badge-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.4rem;
+      }
+      
+      .badge-text {
+        font-size: 0.9rem;
+        max-width: 100px;
+      }
+      
+      .form-card {
+        padding: 28px 22px;
+        border-radius: 28px 28px 0 0;
+      }
+      
+      .form-card h2 {
+        font-size: 1.9rem;
+      }
+      
+      .subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .input-group label {
+        font-size: 0.9rem;
+      }
+      
+      .input-group input,
+      .input-group select {
+        padding: 15px 18px;
+        font-size: 1.05rem;
+      }
+      
+      .submit-btn {
+        padding: 15px;
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+      }
+      
+      .trust {
+        font-size: 0.85rem;
+        padding-top: 20px;
+      }
+      
+      .trust strong {
+        font-size: 1rem;
+      }
+      
+      .whatsapp-btn {
+        font-size: 1.1rem;
+        padding: 10px 22px;
+      }
+      
+      .whatsapp-btn i {
+        font-size: 1.5rem;
+      }
+      
+      #formMessage {
+        font-size: 1.05rem;
+        padding: 10px 16px;
+      }
+      
+      /* Chatbot mobile adjustments */
+      #chatbot-container {
+        width: calc(100% - 24px);
+        bottom: 92px;
+        right: 12px;
+        max-height: 75vh;
+        border-radius: var(--radius-md);
+      }
+      
+      #chatbot-header .avatar-name {
+        font-size: 1.4rem;
+      }
+      
+      #chatbot-header .avatar-status {
+        font-size: 0.9rem;
+      }
+      
+      #chatbot-messages {
+        max-height: 280px;
+        padding: 16px;
+      }
+      
+      .message {
+        max-width: 96%;
+        padding: 14px 18px;
+        font-size: 1rem;
+      }
+      
+      #chatbot-buttons {
+        grid-template-columns: 1fr;
+        padding: 16px;
+        gap: 10px;
+      }
+      
+      .quick-btn {
+        width: 100%;
+        padding: 13px;
+        font-size: 1.05rem;
+      }
+      
+      .quick-btn i {
+        font-size: 1.25rem;
+      }
+      
+      .quick-btn.whatsapp-btn {
+        grid-column: span 1;
+      }
+      
+      #chatbot-input-container {
+        padding: 16px;
+      }
+      
+      #user-message {
+        padding: 12px 16px;
+        font-size: 1rem;
+      }
+      
+      #send-btn {
+        width: 48px;
+        height: 48px;
+        font-size: 1.35rem;
+      }
+      
+      #chatbot-toggle {
+        width: 62px;
+        height: 62px;
+        bottom: 22px;
+        right: 22px;
+        font-size: 26px;
+      }
+    }
+
+    /* Scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: rgba(30, 41, 59, 0.7);
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(135deg, var(--accent-gold), var(--accent-orange));
+      border-radius: 10px;
+      border: 2px solid rgba(30, 41, 59, 0.7);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(135deg, var(--accent-gold-light), var(--accent-orange-light));
+    }
+
+    /* Accessibility improvements */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+
+    /* Print styles */
+    @media print {
+      .header, #chatbot-toggle, #chatbot-container {
+        display: none !important;
+      }
+      
+      .hero {
+        background: none !important;
+        padding-top: 20px !important;
+      }
+      
+      .form-card {
+        box-shadow: none !important;
+        border: 1px solid #000 !important;
+        background: white !important;
+      }
+      
+      body {
+        background: white !important;
+      }
+      
+      .hero-text h1,
+      .hero-text p,
+      .benefits li {
+        color: #000 !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Decorative background elements -->
+  <div class="decoration decoration-1"></div>
+  <div class="decoration decoration-2"></div>
+
+  <div class="header">
+    <div class="brand">
+      <i class="fas fa-home brand-icon"></i>
+      Mantra <span>Properties</span>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Own Your Dream <span style="background:linear-gradient(135deg,var(--accent-gold-light),var(--accent-orange-light));-webkit-background-clip:text;background-clip:text;color:transparent">Home in Pune</span></h1>
+        <div class="divider"></div>
+        <p>Experience luxury living with <strong>Mantra Properties</strong> - Premium 2, 3 & 4 BHK homes in Pune's most sought-after locations, designed for the modern lifestyle with world-class amenities.</p>
+        <ul class="benefits">
+          <li>Zero Brokerage • Direct from Builder</li>
+          <li>Free Guided Site Visit with Expert Consultant</li>
+          <li>Limited Homes Available • Exclusive Offers</li>
+        </ul>
+        
+        <div class="cta-container">
+          <a href="#leadForm" class="cta-primary">
+            <i class="fas fa-calendar-check"></i> Book Site Visit
+          </a>
+          <a href="#projects" class="cta-secondary">
+            <i class="fas fa-building"></i> View Projects
+          </a>
+        </div>
+        
+        <div class="trust-badges">
+          <div class="badge">
+            <div class="badge-icon">
+              <i class="fas fa-certificate"></i>
+            </div>
+            <div class="badge-text">MAHA RERA Registered</div>
+          </div>
+          <div class="badge">
+            <div class="badge-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="badge-text">100% Transparent</div>
+          </div>
+          <div class="badge">
+            <div class="badge-icon">
+              <i class="fas fa-medal"></i>
+            </div>
+            <div class="badge-text">Trusted by 5000+ Families</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card-container">
+        <div class="form-card">
+          <div class="form-header">
+            <h2>Exclusive Site Visit</h2>
+            <p class="subtitle">Get pricing, floor plans & special offers</p>
+          </div>
+
+          <form id="leadForm">
+            <div class="input-group">
+              <label for="full_name">Full Name</label>
+              <input type="text" id="full_name" name="full_name" required placeholder="Enter your full name" />
+            </div>
+
+            <div class="phone-group">
+              <div class="input-group country-code">
+                <label for="country_code" class="optional">Code</label>
+                <input type="text" id="country_code" name="country_code" value="+91" readonly />
+              </div>
+              <div class="input-group" style="flex:1">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required pattern="[6-9][0-9]{9}" maxlength="10" placeholder="e.g. 9876543210" />
+              </div>
+            </div>
+
+            <div class="input-group">
+              <label for="location">Select Project</label>
+              <select id="location" name="location" required>
+                <option value="">Choose Your Preferred Project</option>
+                <option value="Mantra Magnus Elite (Mundhwa Pune)">Mantra Magnus Elite (Mundhwa)</option>
+                <option value="Mantra Magnus (Mundhwa Pune)">Mantra Magnus (Mundhwa)</option>
+                <option value="Mantra 1 Residences By Burgundy (Magarpatta Pune)">Mantra 1 Residences (Magarpatta)</option>
+                <option value="Mantra Codename-Paradise (Sus Pune)">Mantra Codename-Paradise (Sus)</option>
+                <option value="Mantra Melange (Kharadi Pune)">Mantra Melange (Kharadi)</option>
+                <option value="Mantra Meridian (Balewadi Pune)">Mantra Meridian (Balewadi)</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <label for="interest">Unit Type</label>
+              <select id="interest" name="interest" required>
+                <option value="">Select Your Preferred Unit</option>
+                <option value="2 BHK">2 BHK</option>
+                <option value="3 BHK">3 BHK</option>
+                <option value="4 BHK">4 BHK</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <label for="budget">Budget Range</label>
+              <select id="budget" name="budget" required>
+                <option value="">Select Your Budget Range</option>
+                <option value="₹50L – ₹75L">₹50L – ₹75L</option>
+                <option value="₹75L – ₹1Cr" selected>₹75L – ₹1Cr</option>
+                <option value="₹1Cr+">₹1Cr+</option>
+                <option value="Not Decided">Not Decided</option>
+              </select>
+            </div>
+
+            <button type="submit" class="submit-btn">
+              <i class="fas fa-paper-plane"></i> BOOK FREE VISIT
+            </button>
+
+            <div class="trust">
+              <strong>MAHA RERA No: A52100029540</strong><br>
+              100% Privacy Guaranteed • Zero Brokerage • No Spam Calls
+            </div>
+
+            <div class="whatsapp-container">
+              <a href="https://wa.me/919876543210?text=Hi,%20I%20am%20interested%20in%20a%20site%20visit%20for%20Mantra%20Properties" target="_blank" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> WhatsApp Us
+              </a>
+            </div>
+
+            <div id="formMessage"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Custom Chatbot -->
+  <button id="chatbot-toggle" aria-label="Open chat assistant">
+    <i class="fab fa-whatsapp"></i>
+  </button>
+
+  <div id="chatbot-container" aria-live="polite">
+    <div id="chatbot-header">
+      <div class="avatar">
+        <div class="avatar-icon">R</div>
+        <div class="avatar-info">
+          <div class="avatar-name">Riya</div>
+          <div class="avatar-status">Property Consultant • Online</div>
+        </div>
+      </div>
+      <button id="chatbot-close" aria-label="Close chat">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <div id="chatbot-messages">
+      <div class="message bot-message">
+        Hello! I'm Riya, your personal property consultant from Mantra Properties. 😊<br><br>
+        How can I assist you today? I can share brochures, price lists, floor plans, or details about our exclusive offers and current discounts.
+      </div>
+    </div>
+
+    <div id="chatbot-buttons">
+      <button class="quick-btn" data-option="Brochure">
+        <i class="fas fa-file-pdf"></i> Brochure
+      </button>
+      <button class="quick-btn" data-option="PriceList">
+        <i class="fas fa-tag"></i> Price List
+      </button>
+      <button class="quick-btn" data-option="Floor Plan">
+        <i class="fas fa-map"></i> Floor Plan
+      </button>
+      <button class="quick-btn" data-option="Offers">
+        <i class="fas fa-gift"></i> Current Offers
+      </button>
+      <button class="quick-btn whatsapp-btn" data-option="WhatsApp">
+        <i class="fab fa-whatsapp"></i> Send via WhatsApp
+      </button>
+    </div>
+
+    <div id="chatbot-input-container">
+      <input type="text" id="user-message" placeholder="Type your message..." aria-label="Chat message input" />
+      <button id="send-btn" aria-label="Send message">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+
+    <div id="chatbot-status" aria-live="assertive"></div>
+  </div>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11079463518"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-11079463518');
+  </script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize AOS animations
+      AOS.init({
+        duration: 800,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 100
+      });
+      
+      // Header scroll effect
+      const header = document.querySelector('.header');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 60) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+
+      // Form submission handling
+      const leadForm = document.getElementById('leadForm');
+      const formMessage = document.getElementById('formMessage');
+      const submitBtn = leadForm.querySelector('.submit-btn');
+      const phoneInput = document.getElementById('phone');
+      
+      // Real-time phone validation
+      phoneInput.addEventListener('input', function(e) {
+        this.value = this.value.replace(/[^0-9]/g, '');
+        if (this.value.length > 10) {
+          this.value = this.value.slice(0, 10);
+        }
+        
+        // Validate Indian phone number pattern
+        if (this.value.length === 10) {
+          const pattern = /^[6-9][0-9]{9}$/;
+          if (pattern.test(this.value)) {
+            this.classList.remove('error');
+          } else {
+            this.classList.add('error');
+          }
+        } else {
+          this.classList.remove('error');
+        }
+      });
+      
+      // Form submission
+      leadForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Validate phone number before submission
+        const phonePattern = /^[6-9][0-9]{9}$/;
+        if (!phonePattern.test(phoneInput.value)) {
+          showError('Please enter a valid 10-digit Indian mobile number starting with 6-9');
+          phoneInput.classList.add('error');
+          phoneInput.focus();
+          return;
+        }
+        
+        // Disable button and show loading state
+        submitBtn.disabled = true;
+        submitBtn.classList.add('loading');
+        showInfo('Submitting your details...');
+        
+        const formData = new FormData(this);
+        
+        try {
+          const response = await fetch('submit_lead.php', {
+            method: 'POST',
+            body: formData
+          });
+          
+          // Re-enable button
+          submitBtn.disabled = false;
+          submitBtn.classList.remove('loading');
+          
+          if (response.ok) {
+            const result = await response.json();
+            if (result.success) {
+              showSuccess(result.message || 'Thank you! Our representative will contact you shortly.');
+              
+              // Reset form after successful submission
+              setTimeout(() => {
+                leadForm.reset();
+                formMessage.style.display = 'none';
+              }, 4000);
+            } else {
+              showError(result.message || 'Submission failed. Please try again.');
+            }
+          } else {
+            throw new Error('Submission failed');
+          }
+        } catch (err) {
+          console.error('Submission error:', err);
+          submitBtn.disabled = false;
+          submitBtn.classList.remove('loading');
+          showError('Submission failed. Please try again or contact us via WhatsApp.');
+        }
+      });
+      
+      // Helper functions for form messages
+      function showSuccess(message) {
+        formMessage.textContent = message;
+        formMessage.className = 'success';
+        formMessage.style.display = 'block';
+      }
+      
+      function showError(message) {
+        formMessage.textContent = message;
+        formMessage.className = 'error';
+        formMessage.style.display = 'block';
+      }
+      
+      function showInfo(message) {
+        formMessage.textContent = message;
+        formMessage.className = '';
+        formMessage.style.display = 'block';
+      }
+      
+      // Chatbot functionality
+      const chatToggle = document.getElementById('chatbot-toggle');
+      const chatContainer = document.getElementById('chatbot-container');
+      const chatClose = document.getElementById('chatbot-close');
+      const chatMessages = document.getElementById('chatbot-messages');
+      const userInput = document.getElementById('user-message');
+      const sendBtn = document.getElementById('send-btn');
+      const chatStatus = document.getElementById('chatbot-status');
+      const quickButtons = document.querySelectorAll('.quick-btn');
+      
+      let chatState = {
+        step: 'initial', // initial, awaiting_name, awaiting_mobile, completed
+        selectedOption: '',
+        userName: '',
+        userMobile: ''
+      };
+      
+      // Toggle chatbot visibility
+      chatToggle.addEventListener('click', () => {
+        chatContainer.style.display = chatContainer.style.display === 'block' ? 'none' : 'block';
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        
+        // Add pulse animation class when chat is closed
+        if (chatContainer.style.display === 'none') {
+          chatToggle.classList.add('pulse');
+          setTimeout(() => chatToggle.classList.remove('pulse'), 2000);
+        }
+      });
+      
+      chatClose.addEventListener('click', () => {
+        chatContainer.style.display = 'none';
+        chatToggle.classList.add('pulse');
+        setTimeout(() => chatToggle.classList.remove('pulse'), 2000);
+      });
+      
+      // Quick button handlers
+      quickButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const option = btn.dataset.option;
+          chatState.selectedOption = option;
+          
+          // Add user message
+          addMessage(option, 'user');
+          
+          // Show bot response with typing indicator
+          showTypingIndicator();
+          
+          setTimeout(() => {
+            removeTypingIndicator();
+            
+            if (option === 'WhatsApp') {
+              addMessage("Great! Please share your name and mobile number, and I'll send all the property details to your WhatsApp.", 'bot');
+              chatState.step = 'awaiting_name';
+              userInput.placeholder = "Enter your name";
+              userInput.readOnly = false;
+              userInput.focus();
+              sendBtn.disabled = false;
+            } else {
+              let response = '';
+              switch(option) {
+                case 'Brochure':
+                  response = "I'd be happy to share our exclusive brochure with you! To get started, may I know your name please?";
+                  break;
+                case 'PriceList':
+                  response = "I can provide you with our latest price list and payment plans. Could you please share your name first?";
+                  break;
+                case 'Floor Plan':
+                  response = "I'll share the detailed floor plans with you. To proceed, may I know your name?";
+                  break;
+                case 'Offers':
+                  response = "I'd be glad to tell you about our current exclusive offers and discounts. What's your name?";
+                  break;
+              }
+              
+              addMessage(response, 'bot');
+              chatState.step = 'awaiting_name';
+              userInput.placeholder = "Enter your name";
+              userInput.readOnly = false;
+              userInput.focus();
+              sendBtn.disabled = false;
+            }
+          }, 1200);
+        });
+      });
+      
+      // Send button handler
+      sendBtn.addEventListener('click', sendMessage);
+      userInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') sendMessage();
+      });
+      
+      function sendMessage() {
+        const message = userInput.value.trim();
+        if (!message) return;
+        
+        // Add user message to chat
+        addMessage(message, 'user');
+        userInput.value = '';
+        
+        // Handle based on current chat state
+        handleChatInput(message);
+      }
+      
+      function handleChatInput(message) {
+        showTypingIndicator();
+        
+        setTimeout(() => {
+          removeTypingIndicator();
+          
+          switch(chatState.step) {
+            case 'awaiting_name':
+              if (message.length < 2) {
+                addMessage("Please enter a valid name (at least 2 characters).", 'bot');
+                userInput.placeholder = "Enter your name";
+                userInput.focus();
+                return;
+              }
+              
+              chatState.userName = message;
+              addMessage(`Nice to meet you, ${message}! 🌟 Could you please provide your mobile number? (e.g. 9876543210)`, 'bot');
+              chatState.step = 'awaiting_mobile';
+              userInput.placeholder = "Enter your mobile number";
+              userInput.focus();
+              break;
+              
+            case 'awaiting_mobile':
+              const cleanNumber = message.replace(/\D/g, '');
+              
+              if (cleanNumber.length !== 10 || !/^[6-9]/.test(cleanNumber)) {
+                addMessage("Please enter a valid 10-digit Indian mobile number starting with 6-9.", 'bot');
+                userInput.placeholder = "e.g. 9876543210";
+                userInput.focus();
+                return;
+              }
+              
+              chatState.userMobile = cleanNumber;
+              
+              // Submit to CRM
+              submitChatLead(chatState.userName, chatState.userMobile, chatState.selectedOption);
+              
+              // Reset chat state
+              chatState.step = 'completed';
+              userInput.readOnly = true;
+              sendBtn.disabled = true;
+              break;
+              
+            default:
+              addMessage("I'm here to help you with property information. Please select an option below to get started.", 'bot');
+          }
+        }, 1200);
+      }
+      
+      function submitChatLead(name, mobile, option) {
+        chatStatus.textContent = 'Sending your details...';
+        chatStatus.className = '';
+        
+        const formData = new FormData();
+        formData.append('uname', name);
+        formData.append('umobile', mobile);
+        formData.append('chat_option', option);
+        formData.append('message', option);
+        formData.append('form_name', 'Chatbot Inquiry');
+        
+        fetch('./submit_lead.php', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => {
+          if (response.ok || response.redirected) {
+            chatStatus.textContent = 'Details sent successfully!';
+            chatStatus.className = 'status-success';
+            
+            let successMessage = `Thank you ${name}! I've sent the ${option} details to your WhatsApp number ending with ${mobile.slice(-4)}. Our property consultant will also contact you shortly.`;
+            
+            if (option === 'WhatsApp') {
+              successMessage = `Thank you ${name}! 🎉 I've sent all the property details to your WhatsApp number ending with ${mobile.slice(-4)}. Our property consultant will also contact you shortly.`;
+            }
+            
+            addMessage(successMessage, 'bot');
+            
+            // Reset chat after delay
+            setTimeout(() => {
+              chatStatus.textContent = '';
+              chatState = {
+                step: 'initial',
+                selectedOption: '',
+                userName: '',
+                userMobile: ''
+              };
+              userInput.readOnly = true;
+              sendBtn.disabled = false;
+              userInput.placeholder = "Type your message...";
+            }, 5000);
+          } else {
+            throw new Error('Failed to send details');
+          }
+        })
+        .catch(error => {
+          console.error('Chat submission error:', error);
+          chatStatus.textContent = 'Failed to send details. Please try again.';
+          chatStatus.className = 'status-error';
+          
+          // Allow retry
+          chatState.step = 'awaiting_mobile';
+          userInput.placeholder = "Enter your mobile number";
+          userInput.readOnly = false;
+          sendBtn.disabled = false;
+          userInput.focus();
+        });
+      }
+      
+      function addMessage(text, type) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${type}-message`;
+        messageDiv.innerHTML = text.replace(/\n/g, '<br>').replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" style="color:#25D366;text-decoration:underline;font-weight:500;">$1</a>');
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+      
+      function showTypingIndicator() {
+        // Remove any existing indicator first
+        removeTypingIndicator();
+        
+        const indicator = document.createElement('div');
+        indicator.className = 'typing-indicator';
+        indicator.innerHTML = `
+          <div class="typing-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        `;
+        indicator.id = 'typing-indicator';
+        chatMessages.appendChild(indicator);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+      
+      function removeTypingIndicator() {
+        const indicator = document.getElementById('typing-indicator');
+        if (indicator) indicator.remove();
+      }
+      
+      // Initialize chat input as readonly
+      userInput.readOnly = true;
+      sendBtn.disabled = true;
+      
+      // Add initial pulse animation to chat button
+      setTimeout(() => {
+        chatToggle.classList.add('pulse');
+        setTimeout(() => chatToggle.classList.remove('pulse'), 2000);
+      }, 1500);
+      
+      // Close chat if clicking outside on mobile
+      document.addEventListener('click', (e) => {
+        if (window.innerWidth < 768 && chatContainer.style.display === 'block') {
+          if (!chatContainer.contains(e.target) && !chatToggle.contains(e.target)) {
+            chatContainer.style.display = 'none';
+            chatToggle.classList.add('pulse');
+            setTimeout(() => chatToggle.classList.remove('pulse'), 2000);
+          }
+        }
+      });
+      
+      // Add floating animation to decorative elements
+      document.querySelectorAll('.floating').forEach(element => {
+        element.style.animationDelay = `${Math.random() * 2}s`;
+      });
+    });
+  </script>
+</body>
+
+</html>

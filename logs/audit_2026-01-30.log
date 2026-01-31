@@ -1,0 +1,12 @@
+[2026-01-30 10:44:52] [CRM_SUBMISSION_ATTEMPT] IP:::1 | Data:{"type":"form","project":"Mantra Magnus","name":"D**** test form","mobile":"+919****99981","source_id":"1386","ip":"::1"}
+[2026-01-30 10:44:52] [CRM_SUBMISSION_SUCCESS] IP:::1 | Data:{"type":"form","project":"Mantra Magnus","http_code":200,"crm_success":true,"crm_message":"Lead submitted successfully"}
+[2026-01-30 10:45:44] [CRM_SUBMISSION_ATTEMPT] IP:::1 | Data:{"type":"chatbot","project":"Paradise Sai World Empire","name":"d****","mobile":"+919****99981","source_id":"1386","ip":"::1"}
+[2026-01-30 10:45:44] [CRM_SUBMISSION_SUCCESS] IP:::1 | Data:{"type":"chatbot","project":"Paradise Sai World Empire","http_code":200,"crm_success":true,"crm_message":"Lead submitted successfully"}
+[2026-01-30 10:53:16] [CRM_SUBMISSION_ATTEMPT] IP:::1 | Data:{"type":"form","project":"Mantra Codename-Paradise","name":"D**** test form","mobile":"+919****99981","source_id":"1386","ip":"::1"}
+[2026-01-30 10:53:16] [CRM_SUBMISSION_SUCCESS] IP:::1 | Data:{"type":"form","project":"Mantra Codename-Paradise","http_code":200,"crm_success":true,"crm_message":"Lead submitted successfully"}
+[2026-01-30 10:54:02] [CRM_SUBMISSION_ATTEMPT] IP:::1 | Data:{"type":"chatbot","project":"Paradise Sai World Empire","name":"d****","mobile":"+919****99981","source_id":"1386","ip":"::1"}
+[2026-01-30 10:54:03] [CRM_SUBMISSION_SUCCESS] IP:::1 | Data:{"type":"chatbot","project":"Paradise Sai World Empire","http_code":200,"crm_success":true,"crm_message":"Lead submitted successfully"}
+[2026-01-30 11:06:12] [CRM_SUBMISSION_ATTEMPT] IP:::1 | Data:{"type":"chatbot","project":"Paradise Sai World Empire","name":"D****","mobile":"+919****99981","source_id":"1386","ip":"::1"}
+[2026-01-30 11:06:13] [CRM_SUBMISSION_SUCCESS] IP:::1 | Data:{"type":"chatbot","project":"Paradise Sai World Empire","http_code":200,"crm_success":true,"crm_message":"Lead submitted successfully"}
+[2026-01-30 11:08:51] [CRM_SUBMISSION_ATTEMPT] IP:::1 | Data:{"type":"form","project":"Mantra 1 Residences By Burgundy","name":"D**** test form","mobile":"+919****99981","source_id":"1386","ip":"::1"}
+[2026-01-30 11:08:51] [CRM_SUBMISSION_SUCCESS] IP:::1 | Data:{"type":"form","project":"Mantra 1 Residences By Burgundy","http_code":200,"crm_success":true,"crm_message":"Lead submitted successfully"}
