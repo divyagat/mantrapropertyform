@@ -555,6 +555,8 @@ try {
         'error_code' => $errorCode
     ], JSON_UNESCAPED_UNICODE);
     
+
+    
     exit;
 }
 ?>

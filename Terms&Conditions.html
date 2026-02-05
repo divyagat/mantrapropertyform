@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions | Flat Properties</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css  ">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css  ">
+    <style>
+        :root {
+            --primary-gold: #b89e4c;
+            --gold-light: #f5e9c6;
+            --gold-medium: #d4af37;
+            --gold-dark: #8c7b2c;
+            --dark-green: #0a2e1a;
+            --cream: #fffdf7;
+            --soft-brown: #4a4238;
+            --light-brown: #7a7465;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, 'Open Sans', sans-serif;
+            color: var(--soft-brown);
+            background-color: var(--cream);
+            line-height: 1.7;
+            background-image: 
+                radial-gradient(var(--gold-light) 1px, transparent 1px),
+                radial-gradient(var(--gold-light) 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--dark-green) 0%, #072514 100%);
+            color: white;
+            padding: 1.5rem 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        header:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(184, 158, 76, 0.12) 0%, transparent 70%);
+            z-index: 0;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        
+        .logo {
+            max-width: 220px;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, white, var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h1:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary-gold);
+            border-radius: 3px;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-top: 1.5rem;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        .terms-content {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            padding: 3rem;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(184, 158, 76, 0.1);
+            position: relative;
+        }
+        
+        .terms-content:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary-gold), var(--gold-medium));
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .last-updated {
+            text-align: center;
+            color: var(--gold-dark);
+            font-weight: 600;
+            margin-bottom: 2.5rem;
+            padding: 12px;
+            background: rgba(184, 158, 76, 0.08);
+            border-radius: 10px;
+            font-size: 0.95rem;
+        }
+        
+        h2 {
+            color: var(--dark-green);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--gold-light);
+            position: relative;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--primary-gold);
+        }
+        
+        h3 {
+            color: var(--primary-gold);
+            font-size: 1.45rem;
+            margin: 2rem 0 1.25rem;
+            font-weight: 600;
+        }
+        
+        h4 {
+            color: var(--dark-green);
+            font-size: 1.25rem;
+            margin: 1.75rem 0 1rem;
+            font-weight: 600;
+        }
+        
+        p {
+            margin-bottom: 1.25rem;
+            font-size: 1.05rem;
+            color: var(--soft-brown);
+            line-height: 1.8;
+        }
+        
+        .section {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, rgba(184, 158, 76, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+            border-left: 4px solid var(--primary-gold);
+            padding: 1.5rem;
+            border-radius: 0 10px 10px 0;
+            margin: 2rem 0;
+        }
+        
+        .highlight p {
+            margin-bottom: 0;
+            font-style: italic;
+        }
+        
+        .acceptance-box {
+            background: rgba(245, 233, 198, 0.2);
+            border: 2px dashed var(--gold-medium);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            text-align: center;
+        }
+        
+        .acceptance-box h4 {
+            color: var(--primary-gold);
+            margin-bottom: 1rem;
+            font-size: 1.35rem;
+        }
+        
+        .acceptance-box p {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, var(--dark-green) 0%, #072514 100%);
+            color: rgba(255, 255, 255, 0.88);
+            padding: 3rem 1rem 2rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-info {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: rgba(20, 45, 25, 0.6);
+            border-radius: 15px;
+            border: 1px solid rgba(184, 158, 76, 0.15);
+        }
+        
+        .contact-info h4 {
+            color: var(--gold-light);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 1.5rem;
+        }
+        
+        .contact-links a {
+            color: var(--gold-light);
+            text-decoration: none;
+            padding: 8px 18px;
+            border-radius: 30px;
+            border: 1px solid var(--gold-medium);
+            transition: var(--transition);
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .contact-links a:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+            border-color: var(--gold-light);
+        }
+        
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        
+        .copyright a {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .copyright a:hover {
+            text-decoration: underline;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                background-image: none;
+            }
+            
+            header, footer {
+                display: none;
+            }
+            
+            .terms-content {
+                box-shadow: none;
+                border-radius: 0;
+                padding: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 2rem auto;
+            }
+            
+            .terms-content {
+                padding: 2rem 1.5rem;
+                border-radius: 16px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.55rem;
+            }
+            
+            h3 {
+                font-size: 1.25rem;
+            }
+            
+            h4 {
+                font-size: 1.15rem;
+            }
+            
+            p {
+                font-size: 1rem;
+            }
+            
+            .acceptance-box {
+                padding: 1.5rem;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-links a {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+        }
+        
+        /* Scroll indicator */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(184, 158, 76, 0.1);
+            z-index: 1000;
+        }
+        
+        .scroll-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-gold), var(--gold-medium));
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <!-- <div class="logo">
+                    <svg width="220" height="50" viewBox="0 0 220 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="220" height="50" fill="#0a2e1a"/>
+                        <circle cx="45" cy="25" r="12" fill="#b89e4c"/>
+                        <text x="70" y="32" font-family="Arial, sans-serif" font-size="20" fill="white" font-weight="bold">K-PUNE</text>
+                    </svg>
+                </div> -->
+                <h1>Terms & Conditions</h1>
+                <p class="subtitle">Please read these terms carefully before using our services</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="terms-content">
+            <div class="last-updated">
+                <i class="ri-calendar-2-line"></i> Last Updated: January 15, 2026
+            </div>
+
+            <div class="section">
+                <h2><i class="ri-file-text-line"></i> Agreement Overview</h2>
+                <p>These Terms & Conditions govern your use of the services provided by Plots Properties (hereinafter referred to as "the Company", "we", "us", or "our"). By accessing or using our website and services, you agree to be bound by these terms. If you do not agree with any part of these terms, you must not use our services.</p>
+                
+                <div class="highlight">
+                    <p><strong>Important:</strong> These terms apply to all visitors, users, and others who access or use our services, including property inquiries, brochure downloads, and consultation requests.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>1. Acceptance of Terms</h3>
+                <p>By submitting this form, you agree to be bound by these Terms & Conditions. Plots Properties (hereinafter referred to as "the Company") provides real estate services subject to these terms.</p>
+            </div>
+
+            <div class="section">
+                <h3>2. Communication Consent</h3>
+                <p>You consent to receive communications from the Company via phone calls, SMS, WhatsApp messages, regarding your inquiry, property updates, offers, and related services. Standard messaging and data rates may apply.</p>
+                <p>The Company may contact you through automated systems, including but not limited to, automated dialers, pre-recorded messages, and text messages. You acknowledge that consent is not a condition of purchase.</p>
+            </div>
+
+            <div class="section">
+                <h3>3. Accuracy of Information</h3>
+                <p>The information provided on this website and in communications is for general informational purposes only. While we strive for accuracy, the Company does not guarantee the completeness or reliability of any information.</p>
+                <p>All property details, pricing, availability, and specifications are subject to change without prior notice. The Company reserves the right to make modifications to any information provided at any time without notice.</p>
+            </div>
+
+            <div class="section">
+                <h3>4. No Spam Policy</h3>
+                <p>We respect your privacy and will not share your personal information with third parties for marketing purposes without your explicit consent. Your data will only be used for the purpose of responding to your inquiry.</p>
+                <p>The Company is committed to protecting your personal information and adheres to applicable data protection laws and regulations.</p>
+            </div>
+
+            <div class="section">
+                <h3>5. Right to Withdraw Consent</h3>
+                <p>You may withdraw your consent to receive communications at any time by contacting us. However, this may affect our ability to provide you with requested services.</p>
+                <p>To withdraw consent, you may contact us at our customer service number provided in the contact section below.</p>
+            </div>
+
+            <div class="section">
+                <h3>6. Limitation of Liability</h3>
+                <p>The Company shall not be liable for any direct, indirect, incidental, or consequential damages arising from your use of our services or reliance on information provided.</p>
+                <p>In no event shall the Company be liable for any special, punitive, indirect, or consequential damages, including but not limited to, loss of data, loss of profits, or business interruption, whether based on warranty, contract, tort, or any other legal theory.</p>
+            </div>
+
+            <div class="section">
+                <h3>7. Changes to Terms</h3>
+                <p>The Company reserves the right to modify these Terms & Conditions at any time. Continued use of our services after changes constitutes acceptance of the modified terms.</p>
+                <p>We will notify you of any significant changes by posting the updated terms on our website. Your continued use of our services after such changes constitutes your acceptance of the new terms.</p>
+            </div>
+
+            <div class="section">
+                <h3>8. Governing Law</h3>
+                <p>These Terms & Conditions shall be governed by and construed in accordance with the laws of India. Any disputes shall be subject to the exclusive jurisdiction of courts in Pune, Maharashtra.</p>
+                <p>Any legal action or proceeding arising under these terms will be brought exclusively in the courts located in Pune, Maharashtra, and you hereby irrevocably consent to the personal jurisdiction and venue therein.</p>
+            </div>
+
+            <div class="section">
+                <h3>9. Privacy and Data Collection</h3>
+                <p>The Company may collect, store, and use your personal information in accordance with its privacy policy, which is available at Associate PropTech Pvt. Ltd. We may use third-party services or tracking technologies, such as cookies or analytics tools, to collect information about your use of this landing page.</p>
+                <p>By using our services, you consent to our collection and use of information in accordance with our Privacy Policy. We may share your information with third-party vendors, consultants, and service providers who perform services on our behalf.</p>
+            </div>
+
+            <div class="acceptance-box">
+                <h4><i class="ri-checkbox-circle-line"></i> Your Agreement</h4>
+                <p>By submitting your inquiry or using our services, you acknowledge that you have read, understood, and agree to be bound by these Terms & Conditions.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="contact-info">
+                    <h4><i class="ri-contacts-book-2-line"></i> Contact Information</h4>
+                    <p>For any questions regarding these Terms & Conditions, please contact us:</p>
+                    
+                    <div class="contact-links">
+                        <a href="tel:+918881188181">
+                            <i class="ri-phone-line"></i> +91 88811 88181
+                        </a>
+                        <!-- <a href="mailto:info@plotsproperties.com">
+                            <i class="ri-mail-line"></i> info@plotsproperties.com
+                        </a> -->
+                        <a href="PrivacyPolicy.html">
+                            <i class="ri-shield-keyhole-line"></i> Privacy Policy
+                        </a>
+                    </div>
+                </div>
+
+                <p class="copyright">
+                    © 2026 Plots Properties. All Rights Reserved.<br>
+                    Design & Marketed By: <a href="/">Associate PropTech Pvt Ltd</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll progress bar
+        window.addEventListener('scroll', function() {
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight;
+            const clientHeight = document.documentElement.clientHeight;
+            const scrolled = (scrollTop / (scrollHeight - clientHeight)) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Print functionality
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'p') {
+                window.print();
+            }
+        });
+    </script>
+</body>
+
+</html>
+
+
+

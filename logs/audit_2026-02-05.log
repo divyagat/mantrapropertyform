@@ -1,0 +1,8 @@
+[2026-02-05 13:21:06] [CRM_SUBMISSION_ATTEMPT] IP:::1 | Data:{"type":"form","project":"Mantra 1 Residences By Burgundy","name":"D**** test form","mobile":"+919****99981","source_id":"1386","ip":"::1"}
+[2026-02-05 13:21:08] [CRM_SUBMISSION_SUCCESS] IP:::1 | Data:{"type":"form","project":"Mantra 1 Residences By Burgundy","http_code":200,"crm_success":true,"crm_message":"Lead submitted successfully"}
+[2026-02-05 13:25:13] [CRM_SUBMISSION_ATTEMPT] IP:::1 | Data:{"type":"form","project":"Mantra 1 Residences By Burgundy","name":"D**** test form","mobile":"+919****99981","source_id":"1386","ip":"::1"}
+[2026-02-05 13:25:14] [CRM_SUBMISSION_SUCCESS] IP:::1 | Data:{"type":"form","project":"Mantra 1 Residences By Burgundy","http_code":200,"crm_success":true,"crm_message":"Lead submitted successfully"}
+[2026-02-05 13:26:02] [CRM_SUBMISSION_ATTEMPT] IP:::1 | Data:{"type":"form","project":"Mantra 1 Residences By Burgundy","name":"D**** test form","mobile":"+919****99981","source_id":"1386","ip":"::1"}
+[2026-02-05 13:26:03] [CRM_SUBMISSION_SUCCESS] IP:::1 | Data:{"type":"form","project":"Mantra 1 Residences By Burgundy","http_code":200,"crm_success":true,"crm_message":"Lead submitted successfully"}
+[2026-02-05 14:14:52] [CRM_SUBMISSION_ATTEMPT] IP:::1 | Data:{"type":"form","project":"Mantra 1 Residences By Burgundy","name":"D**** test form","mobile":"+919****99981","source_id":"1386","ip":"::1"}
+[2026-02-05 14:14:53] [CRM_SUBMISSION_SUCCESS] IP:::1 | Data:{"type":"form","project":"Mantra 1 Residences By Burgundy","http_code":200,"crm_success":true,"crm_message":"Lead submitted successfully"}
